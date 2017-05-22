@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Twitter Bootstrap v3 Sliding pagination control implementation.
+ *
+ * View that can be used with the pagination module
+ * from the Twitter Bootstrap CSS Toolkit
+ * http://getbootstrap.com/components/#pagination
+ *
+ * @author Pablo Díez <pablodip@gmail.com>
+ * @author Jan Sorgalla <jsorgalla@gmail.com>
+ * @author Artem Ponomarenko <imenem@inbox.ru>
+ * @author Artem Zabelin <artjomzabelin@gmail.com>
+ */
+#}
+
+{% if pageCount > 1 %}
+
+    {% if previous is defined %}
+        {# for default theme#}
+        {# <div class="next">
+             <a rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">{{ 'Newer posts'|trans }}
+                 <span class="meta-nav">→</span></a>
+         </div>#}
+
+        {# for newTheme theme#}
+        <div class="blog-pagination-newer">
+            <a rel="next" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">
+                <i class="fa fa-angle-double-left"></i>{{ 'Newer posts'|trans }}</a>
+        </div>
+
+    {% endif %}
+
+    {% if next is defined %}
+    {# for default theme#}
+    {#<div class="previous">
+    <a rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">
+    <span class="meta-nav">&larr;</span>
+    {{ 'Older posts'|trans }}</a>
+    </div>#}
+
+    {# for newTheme theme#}
+    <div class="blog-pagination-older">
+    <a rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">
+        {{ 'Older posts'|trans }}<i class="fa fa-angle-double-right"></i></a>
+   </div>
+
+    {% endif %}
+
+{% endif %}
+

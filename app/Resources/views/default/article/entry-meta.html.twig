@@ -1,0 +1,20 @@
+<footer class="entry-meta">
+    <span class="post-format-link">
+        <a href="{{ app.request.uri }}" title="Permalink to " rel="bookmark">
+            #Standard</a>
+    </span>
+    <span class="sep"> | </span>
+    <span class="cat-links">
+        Posted in
+        {% for term in term[posts.id] %}
+            <a href="{{ path('category_archives', { category_name: term}) }}"
+               rel="category tag">{{ term }}</a>,
+        {% endfor %}
+    </span>
+    <span class="sep"> | </span>
+    <span class="comments-link">
+        <a href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}#respond">
+            {{ posts.commentCount }} comments</a>
+    </span>
+
+</footer><!-- .entry-meta -->

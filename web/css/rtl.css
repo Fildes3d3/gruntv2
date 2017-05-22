@@ -1,0 +1,125 @@
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+html { overflow-x: hidden; }
+#content nav .nav-previous {
+	float: right;
+}
+
+#content nav .nav-next {
+	float: left;
+	text-align: left;
+}
+
+#site-title {
+	margin-right: 0;
+	margin-left: 315px;
+}
+
+#site-description {
+	margin-right: 0;
+	margin-left: 300px;
+}
+
+header[role=banner] #searchform {
+	right: auto;
+	left: 0;
+}
+
+header[role=banner] #s {
+	background: url(library/images/icon-search.png) no-repeat 98% 50% #fff;
+	padding: 7px 30px 7px 10px;
+}
+
+.social-links li {
+	float: right;
+	margin-right: 0;
+	margin-left: 20px;
+}
+.social-links li:last-child {
+	margin-left: 0;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+
+/* Small menu */
+.menu-toggle {
+	display:none;
+	cursor: pointer;
+}
+
+.main-small-navigation ul {
+	display: none;
+}
+
+@media screen and (max-width: 880px) {
+	.menu-toggle {
+		display:block;
+		text-decoration: none;
+		padding: 20px 20px 0 20px;
+		color:#fff;
+		font-family:'Oswald', Tahoma, Geneva, sans-serif;
+		font-weight:400;
+		text-transform:uppercase;
+		font-size:14px;
+	}
+	.menu-toggle:before{
+		font-family:genericons;
+		content: '\f419';
+		vertical-align:top;
+		padding-left:12px;
+	}
+	.main-small-navigation{
+		clear: both;
+		display: block;
+		float: right;
+		width: 100%;
+		padding-top:7px;
+		background:#000;
+		border-bottom:5px solid #00aeef;
+		position:relative;
+	}
+	.main-small-navigation ul {
+		margin:0 ;
+		position:absolute;
+		z-index:9999;
+		right:20px;
+		width:200px;
+
+	}
+	.main-small-navigation ul ul{
+		display:block;
+		float:none;
+		padding:0;
+		margin:0;
+		position:relative;
+		right:0;
+	}
+	.main-small-navigation a {
+		text-decoration: none;
+		color:#fff;
+		font-family:'Oswald', Tahoma, Geneva, sans-serif;
+		font-weight:400;
+		text-transform:uppercase;
+		font-size:14px;
+		display:block;
+		padding:5px 20px;
+		margin:0;
+		background:#00aeef;
+	}
+	.main-small-navigation a:hover {
+		background:#01a0db;
+	}
+	.main-small-navigation ul ul a{
+		padding:5px 30px;
+	}
+	.main-small-navigation ul.nav-menu.toggled-on {
+		display:block;
+	}
+	.main-navigation ul {
+		display: none;
+	}
+}

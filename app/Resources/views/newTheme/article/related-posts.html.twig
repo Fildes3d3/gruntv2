@@ -1,0 +1,27 @@
+<div id="related-posts">
+
+    <h3 class="title-lines"><span>You Might Also Like</span></h3>
+
+    {% for related in allposts %}
+    <div class="related-posts-item">
+
+        <a href="{{ path('show', {year: related.date|date('Y'), month: related.date|date('m'), day: related.date|date('d'), name: related.name}) }}">
+            <div class="related-posts-img">
+
+                {% set image = related.content | split('</a>' )[0] %}
+                {% set video = related.content | split('<em>')[0] | replace ({'[embed]https://www.youtube.com/watch?v=': '<iframe src="https://www.youtube.com/embed/', '[/embed]': '" frameborder="0" ></iframe>'}) %}
+
+                {% if 'embed' in image %}
+                    {{ video | raw }}
+                {% else %}
+                    {{ image | raw }}
+                {% endif %}
+
+            </div>
+            <h4>{{ related.title }}</h4>
+            <span>{{ related.date|date('F d, Y')  }}</span>
+        </a>
+    </div>
+    {% endfor %}
+
+</div>

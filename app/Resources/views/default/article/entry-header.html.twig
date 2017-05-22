@@ -1,0 +1,8 @@
+<header class="entry-header">
+    <h1 class="entry-title">
+        <a href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}"
+           title="{{ posts.name }}" rel="bookmark">
+            {{ posts.title }}
+        </a>
+    </h1>
+</header><!-- .entry-header -->

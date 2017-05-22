@@ -1,0 +1,10 @@
+<aside id="recent-posts-2" class="widget widget_recent_entries">
+    <h2 class="widget-title">Recent Posts</h2>
+    <ul>
+        {% for posts in posts|slice(0, 5) %}
+        <li>
+            <a href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}">{{ posts.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</aside>

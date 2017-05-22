@@ -1,0 +1,14 @@
+<aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">Previous Posts</h2>
+    <label class="screen-reader-text" for="archives-dropdown-2">Previous Posts</label>
+    <select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+        <option value="">Select Month</option>
+
+
+
+        {% for allmonths in allmonths|reverse %}
+
+            <option value='{{ path('monthly_archives', {date: allmonths[1]} ) }}'> {{ allmonths[1] }} </option>
+
+        {% endfor %}
+    </select>
+</aside>

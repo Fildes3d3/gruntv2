@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body class="home blog single-author">
+    {% include 'default/head/site-navigation.html.twig' %}
+
+<div id="container">
+
+    {% include 'default/head/branding.twig' %}
+
+    <div id="content" class="clearfix">
+        <div id="main" class="column clearfix" role="main">
+            {% for posts in posts|slice(0, 10) if posts.type == 'post' %}
+
+                {% include 'default/article/post.html.twig' %}
+
+            {% endfor %}
+            {% include 'default/article/nav-below.html.twig' %}
+
+        </div>
+
+        <div id="sidebar" class="widget-area sidebar-column" role="complementary">
+
+            {% include 'default/sidebar/subscribe.html.twig' %}
+
+            {% include 'default/sidebar/social.html.twig' %}
+
+            {% include 'default/sidebar/categories.html.twig' %}
+
+            {% include 'default/sidebar/recent-posts.html.twig' %}
+
+            {% include 'default/sidebar/archives.html.twig' %}
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+

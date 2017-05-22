@@ -1,0 +1,21 @@
+<div id="nav-wrapper">
+    <nav id="site-navigation" class="navigation-main" role="navigation">
+        <div class="menu-wrapper">
+            <h1 class="menu-toggle">Menu</h1>
+            <div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+
+            <div class="menu">
+                <ul>
+
+                    {% if 'about-rick-floyd' in app.request.uri %}
+                    <li class="page_item page-item-79 current_page_item">
+                    {% else %}
+                    <li class="page_item page-item-79">
+                    {% endif %}
+                        <a href="{{ path('about') }}">About Rick Floyd</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- #site-navigation -->
+</div>

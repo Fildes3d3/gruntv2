@@ -1,0 +1,14 @@
+<div id="instagram-footer">
+
+    <div id="null-instagram-feed-3" class="instagram-widget null-instagram-feed">
+        <ul class="instagram-pics instagram-size-small">
+            {% for image in images | slice (0, 8) %}
+            <li class="imgs">
+                <a href="{{ image }}"  data-lightbox="pictures">
+                    <img src="{{ image }}" alt="{{ image }}" class="">
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

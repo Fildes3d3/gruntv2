@@ -1,0 +1,9 @@
+<div id="categories-2" class="widget widget_categories"><h3 class="title-lines"><span>Categories</span></h3>
+    <ul>
+        {% for category in categories|sortbyfield('name') %}
+        <li class="cat-item cat-item-3">
+            <a href="{{ path('category_archives', { category_name: category.slug}) }}">{{ category.name }}</a> ({{ category.catcount }})
+        </li>
+        {% endfor %}
+    </ul>
+</div>

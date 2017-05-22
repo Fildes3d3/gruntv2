@@ -1,0 +1,13 @@
+<article id="post-{{ posts.id }}" class="post-{{ posts.id }} {{ posts.type }} type-{{ posts.type }}
+            status-{{ posts.status }} format-standard hentry category-askrickfloyd
+            category-books category-special-messages category-videos">
+
+    {% include 'default/article/posted-meta.html.twig' %}
+
+    {% include 'default/article/entry-header.html.twig' %}
+
+    {% include 'default/article/entry-content.html.twig' %}
+
+    {% include 'default/article/entry-meta.html.twig' %}
+
+</article><!-- #post-## -->

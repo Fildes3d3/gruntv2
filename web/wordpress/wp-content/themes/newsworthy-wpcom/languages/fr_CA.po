@@ -1,0 +1,302 @@
+# Translation of Newsworthy in French (Canada)
+# This file is distributed under the same license as the Newsworthy package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-07-06 12:13:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Newsworthy\n"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/newsworthy/full-width-page.php
+msgid "Full width, no sidebar"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/newsworthy/style.css
+msgid "Newsworthy theme is a simple theme with cool design and beautiful color accents. It's a fun and functional theme perfect for the personal blogger."
+msgstr ""
+
+#: sidebar.php:45
+msgid "Meta"
+msgstr "Méta"
+
+#: sidebar.php:15
+msgid "Connect"
+msgstr "Connecter"
+
+#: searchform.php:11
+msgctxt "submit button"
+msgid "Search"
+msgstr "Chercher"
+
+#: searchform.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Chercher &hellip;"
+
+#: searchform.php:9
+msgctxt "assistive text"
+msgid "Search"
+msgstr "Rech"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Désolé, mais rien ne correspond à vos critères. Réessayez en modifiant les termes de recherche."
+
+#: no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Vous êtes prêt à publier votre premier article? <a href=\"%1$s\">Commencez ici</a>."
+
+#: index.php:40 no-results.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Le contenu demandé n&rsquo;a pu être trouvé. Pourquoi ne pas lancer une recherche? "
+
+#: index.php:36 no-results.php:13
+msgid "Nothing Found"
+msgstr "Inaccessible"
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:91
+msgid "%1$s <br /> %2$s"
+msgstr "%1$s <br /> %2$s"
+
+#: inc/template-tags.php:121
+msgid "<span class=\"post-format-link\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a></span> </span>"
+msgstr "<span class=\"post-format-link\"><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\">%3$s</a></span> </span>"
+
+#: inc/template-tags.php:123
+msgid "Permalink to %s"
+msgstr "Permalien vers %s"
+
+#: inc/template-tags.php:83
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: inc/template-tags.php:70
+msgid "Pingback:"
+msgstr "Ping :"
+
+#: inc/template-tags.php:50
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles ultérieurs <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:46
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles Précédents"
+
+#: inc/template-tags.php:41
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:40
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:36
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "Suivant &rarr;"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; Précédent"
+
+#: image.php:23
+msgid "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>."
+msgstr "<span class=\"meta-prep meta-prep-entry-date\">Publié </span> <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> à <a href=\"%3$s\" title=\"Lien image full-size\">%4$s &times; %5$s</a> dans <a href=\"%6$s\" title=\"Retour %7$s\" rel=\"gallery\">%8$s</a>."
+
+#: header.php:28
+msgid "Skip to content"
+msgstr "Aller au contenu principal"
+
+#. translators: If there are characters in your language that are not supported
+#. by Carrois Gothic, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:174
+msgctxt "Oswald font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:27
+msgid "Menu"
+msgstr "Menu"
+
+#: functions.php:105
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#: functions.php:57
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: footer.php:10
+msgid "Theme: %1$s by %2$s."
+msgstr "Thème %1$s par %2$s."
+
+#: content.php:63
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: content.php:63
+msgid "1 Comment"
+msgstr "1 commentaire"
+
+#: content.php:63
+msgid "0 comments"
+msgstr "0 Commentaire"
+
+#: content.php:56
+msgid "Tagged %1$s"
+msgstr "Marqué %1$s"
+
+#: content.php:45
+msgid "Posted in %1$s"
+msgstr "Posté dans %1$s"
+
+#: content.php:30
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-single.php:50
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Cette entrée a été publiée dans %1$s. Mettre ce <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a> en signet."
+
+#: content-single.php:48
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Cette entrée, publiée dans %1$s, est marquée %2$s. Mettre ce <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a> en signet."
+
+#: content-single.php:42
+msgid "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:40
+msgid "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Cette entrée est marquée %2$s. Mettre ce <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a> en signet."
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:32 content.php:41 content.php:51
+msgid ", "
+msgstr ", "
+
+#: content-single.php:14 content.php:14
+msgid "View all posts by %s"
+msgstr "Voir tous les articles par %s"
+
+#: content-single.php:12 content.php:12
+msgid "by <a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a>"
+msgstr "par <a class=\"url fn n\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a>"
+
+#: content-single.php:9 content.php:9 inc/template-tags.php:81
+msgid "%s"
+msgstr "%s"
+
+#: content-page.php:17 content-single.php:64 content.php:66 image.php:34
+#: inc/template-tags.php:70 inc/template-tags.php:93
+msgid "Edit"
+msgstr "Modifier"
+
+#: content-page.php:15 content-single.php:26 content.php:31 image.php:89
+msgid "Pages:"
+msgstr "Pages :"
+
+#: comments.php:67
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:37 comments.php:57
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires ultérieurs &rarr;"
+
+#: comments.php:36 comments.php:56
+msgid "&larr; Older Comments"
+msgstr "&larr; Commentaires antérieurs"
+
+#: comments.php:35 comments.php:55
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: comments.php:27
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Une réflexion sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s réflexions sur &ldquo;%2$s&rdquo;"
+
+#: archive.php:60 sidebar.php:38
+msgid "Archives"
+msgstr "Archives"
+
+#: archive.php:57
+msgid "Links"
+msgstr "Liens"
+
+#: archive.php:54
+msgid "Quotes"
+msgstr "Citations"
+
+#: archive.php:51
+msgid "Videos"
+msgstr "Vidéos"
+
+#: archive.php:48
+msgid "Images"
+msgstr "Images"
+
+#: archive.php:45
+msgid "Asides"
+msgstr "Apartés"
+
+#: archive.php:42
+msgid "Yearly Archives: %s"
+msgstr "Archives annuelles : %s"
+
+#: archive.php:39
+msgid "Monthly Archives: %s"
+msgstr "Archives mensuelles : %s"
+
+#: archive.php:36
+msgid "Daily Archives: %s"
+msgstr "Archives quotidiennes : %s"
+
+#: archive.php:28
+msgid "Author Archives: %s"
+msgstr "Archives d’auteur : %s"
+
+#: archive.php:21
+msgid "Tag Archives: %s"
+msgstr "Archives de mot-clé : %s"
+
+#: archive.php:18
+msgid "Category Archives: %s"
+msgstr "Archives de catégorie : %s"
+
+#. translators: %1$s: smiley
+#: 404.php:35
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Nous vous suggérons de parcourir les archives mensuelles. %1$s"
+
+#: 404.php:26
+msgid "Most Used Categories"
+msgstr "Catégories les plus utilisées"
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Aucun contenu n&rsquo; a été trouvé à l&rsquo;adresse demandée. Pourquoi ne pas essayer l&rsquo;un des liens ci-dessouss, ou encore, lancer une recherche?"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups! Cette page est introuvable."

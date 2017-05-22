@@ -1,0 +1,15 @@
+<header id="branding" role="banner">
+    <div id="inner-header" class="clearfix">
+        <hgroup id="site-heading">
+
+            <h1 class="site-title"><a href="{{ path('homepage') }}" title="Chasing Excellence" rel="home">Chasing Excellence</a></h1>
+            <h2 class="site-description">with Rick Floyd</h2>
+        </hgroup>
+
+        <form method="get" id="searchform" class="searchform" action="{{ path('homepage') }}" role="search">
+            <label for="s" class="assistive-text">Search</label>
+            <input type="search" class="field" name="s" value="" id="s" placeholder="Search &hellip;" />
+            <input type="submit" class="submit" id="searchsubmit" value="Search" />
+        </form>
+    </div>
+</header><!-- #branding -->

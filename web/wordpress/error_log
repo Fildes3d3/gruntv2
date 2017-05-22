@@ -1,0 +1,4 @@
+[22-Jan-2017 12:50:57 UTC] PHP Fatal error:  Call to undefined function register_activation_hook() in /home/chasingp/public_html/wp-content/plugins/contact-form-plugin/contact_form.php on line 3796
+[22-Jan-2017 12:50:57 UTC] PHP Fatal error:  Call to undefined function register_activation_hook() in /home/chasingp/public_html/wp-content/plugins/contact-form-plugin/contact_form.php on line 3796
+[22-Jan-2017 12:50:58 UTC] PHP Fatal error:  Call to undefined function register_activation_hook() in /home/chasingp/public_html/wp-content/plugins/contact-form-plugin/contact_form.php on line 3796
+[22-Jan-2017 12:50:58 UTC] PHP Fatal error:  Call to undefined function register_activation_hook() in /home/chasingp/public_html/wp-content/plugins/contact-form-plugin/contact_form.php on line 3796

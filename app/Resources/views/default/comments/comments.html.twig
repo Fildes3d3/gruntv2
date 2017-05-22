@@ -1,0 +1,135 @@
+<div id="comments" class="comments-area">
+
+    <h2 id="comments-title">
+        One thought on &ldquo;<span>{{ posts.name }}</span>&rdquo;
+    </h2>
+
+    <ol class="commentlist">
+        {% for comment in comments if comment.parent == 0   %}
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-{{ comment.id }}">
+            <footer class="clearfix comment-head">
+                <div class="comment-author vcard">
+                    <img alt=''
+                         src='http://1.gravatar.com/avatar/dfaecb0ed190874de6ffc87ae8ee7066?s=40&#038;d=mm&#038;r=g'
+                         srcset='http://1.gravatar.com/avatar/dfaecb0ed190874de6ffc87ae8ee7066?s=80&amp;d=mm&amp;r=g 2x'
+                         class='avatar avatar-40 photo' height='40' width='40'/>
+                </div><!-- .comment-author .vcard -->
+                <cite class="fn"><a href='{{ comment.authorUrl }}' rel='external nofollow' class='url'>{{ comment.author }}</a></cite>
+                {% if comment.approved == 0  %}
+                    <em>Yourcomment is awaiting moderation.</em>
+                    <br/>
+                {% endif %}
+                <div class="comment-meta commentmetadata">
+                    <a href="http://chasing/2017/01/23/chasing-excellence-in-2017/#comment-{{ comment.id }}">
+                        <time pubdate datetime="{{ comment.date|date('c') }}">
+                            {{ comment.date|date('F d, Y') }} <br/> {{ comment.date|date('h:i a') }}
+                        </time>
+                    </a>
+                </div><!-- .comment-meta .commentmetadata -->
+            </footer>
+            <article id="comment-{{ comment.id }}" class="comment">
+
+
+                <div class="comment-content"><p>{{ comment.content|raw }}</p><p>Comment:{{ comment.id }}</p><p>Parent:{{ comment.parent }}</p><p>Approved:{{ comment.approved }}</p>
+                </div>
+
+                <div class="reply">
+                    <a rel='nofollow' class='comment-reply-link'
+                       href='http://chasing/2017/01/23/chasing-excellence-in-2017/?replytocom={{ comment.id }}#respond'
+                       onclick='return addComment.moveForm( "comment-{{ comment.id }}", "{{ comment.id }}", "respond", "{{ posts.id }}" )'
+                       aria-label='Reply to {{ comment.author }}'>Reply</a></div><!-- .reply -->
+
+            </article><!-- #comment-## -->
+            <div class="clearfix"></div>
+
+
+            <ul class="children">
+                {% for commentresponse in comments if commentresponse.parent == comment.id %}
+                <li class="comment even depth-2" id="li-comment-{{ commentresponse.id }}">
+                    <footer class="clearfix comment-head">
+                        <div class="comment-author vcard">
+                            <img alt=''
+                                 src='http://1.gravatar.com/avatar/dfaecb0ed190874de6ffc87ae8ee7066?s=40&#038;d=mm&#038;r=g'
+                                 srcset='http://1.gravatar.com/avatar/dfaecb0ed190874de6ffc87ae8ee7066?s=80&amp;d=mm&amp;r=g 2x'
+                                 class='avatar avatar-40 photo' height='40' width='40'/>
+                        </div><!-- .comment-author .vcard -->
+
+                        <cite class="fn"><a href='{{ commentresponse.authorUrl }}' rel='external nofollow' class='url'>{{ commentresponse.author }}</a></cite>
+                        {% if commentresponse.approved == 0 %}
+                            <em>Yourcomment is awaiting moderation.</em>
+                        <br/>
+                        {% endif %}
+
+                        <div class="comment-meta commentmetadata">
+                            <a href="http://chasing/2017/01/23/chasing-excellence-in-2017/#comment-{{ commentresponse.id }}">
+                                <time pubdate datetime="{{ commentresponse.date|date('c') }}">
+                                    {{ commentresponse.date|date('F d, Y') }} <br/> {{ commentresponse.date|date('h:i a') }}
+                                </time>
+                            </a>
+                        </div><!-- .comment-meta .commentmetadata -->
+                    </footer>
+                    <article id="comment-{{ commentresponse.id }}" class="comment">
+
+
+                        <div class="comment-content"><p>{{ commentresponse.content|raw }}</p><p>commentresponse:{{ commentresponse.id }}</p><p>Parent:{{ commentresponse.parent }}</p><p>Approved:{{ comment.approved }}</p>
+                        </div>
+
+                        <div class="reply">
+                            <a rel='nofollow' class='comment-reply-link'
+                               href='http://chasing/2017/01/23/chasing-excellence-in-2017/?replytocom={{ commentresponse.id }}#respond'
+                               onclick='return addComment.moveForm( "comment-{{ commentresponse.id }}", "{{ commentresponse.id }}", "respond", "{{ posts.id }}" )'
+                               aria-label='Reply to {{ commentresponse.author }}'>Reply</a></div><!-- .reply -->
+
+                    </article><!-- #comment-## -->
+                    <div class="clearfix"></div>
+
+                </li><!-- #comment-## -->
+                {% endfor %}
+
+            </ul><!-- .children -->
+
+
+        </li><!-- #comment-## -->
+        {% endfor %}
+
+    </ol><!-- .comment-list -->
+
+
+    <div id="respond" class="comment-respond">
+        <h3 id="reply-title" class="comment-reply-title">Leave a Reply
+            <small><a rel="nofollow" id="cancel-comment-reply-link"
+                      href="/2017/01/23/chasing-excellence-in-2017/#respond" style="display:none;">Cancel reply</a>
+            </small>
+        </h3>
+        <form action="http://chasing/wordpress/wp-comments-post.php" method="post" id="commentform"
+              class="comment-form">
+            <p class="comment-notes"><span id="email-notes">Your email address will not be published. Required
+                fields are marked</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="required">*</span></p>
+            <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment"
+                                                                                           cols="45" rows="8"
+                                                                                           maxlength="65525"
+                                                                                           aria-required="true"
+                                                                                           required="required"></textarea>
+            </p>
+            <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input
+                        id="author" name="author" type="text" value="{{ comment_author }}" size="30" maxlength="245" aria-required='true'
+                        required='required'/></p>
+            <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input
+                        id="email" name="email" type="text" value="{{ comment_author_email }}" size="30" maxlength="100"
+                        aria-describedby="email-notes" aria-required='true' required='required'/></p>
+            <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text"
+                                                                                value="{{ comment_author_url }}" size="30"
+                                                                                maxlength="200"/></p>
+            <p class="form-submit">
+                <input type='hidden' name='comment_post_ID' value='{{ posts.id }}' id='comment_post_ID'/>
+                <input type="hidden" name='comment_parent' id='comment_parent' value="#"/>
+                <input type="hidden" name="redirect_to" value="{{ app.request.uri }}">
+                <input name="submit" type="submit" id="submit" class="submit" value="Post Comment"/>
+
+            </p>
+            <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce"
+                                             value="7d4ad6882c"/></p>
+            <p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="76"/></p></form>
+    </div><!-- #respond -->
+
+</div><!-- #comments -->

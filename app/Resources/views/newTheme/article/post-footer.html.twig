@@ -1,0 +1,23 @@
+<div class="post-footer">
+
+    <div class="post-meta">
+
+        <span class="post-time">{{ post.date|date('F d, Y') }}</span>
+
+        <span class="post-author"><span>By</span><a href="{{ path('author_archives', { author_name: post.author.niceName}) }}"
+                                                    title="Posts by {{ post.author.displayName }}"
+                                                    rel="author">{{ post.author.displayName }}</a></span>
+
+    </div>
+
+    <div class="post-share">
+
+        <a href="http://www.facebook.com/sharer.php?u=/{{ post.name }}/&amp;t={{ post.name }}"
+           target="_blank"><i class="fa fa-facebook"></i></a>
+
+        <a class="post-comment-link" href="{{ path('show', {year: post.date|date('Y'), month: post.date|date('m'), day: post.date|date('d'), name: post.name}) }}#comments"><i
+                    class="fa fa-comment-o"></i><span class="post-comment-number">{{ post.commentCount }}</span></a>
+
+    </div>
+
+</div>

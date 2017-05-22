@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body class="home blog">
+
+    {% include 'newTheme/header/header.html.twig' %}
+
+    <div class="container">
+        <div id="content">
+
+            <div id="main">
+                    <article id="post-{{ posts.id }}"
+                             class="post-{{ posts.id }} post type-{{ posts.type }} status-{{ posts.status }} format-standard has-post-thumbnail hentry category-travel tag-alaska tag-forest tag-tithonia tag-travel tag-treewis tag-trip">
+
+                        <div class="post-header">
+
+                    <span class="post-category">
+                        {% for term in terms if posts.id == term.id %}
+                        <a href="{{ path('category_archives', { category_name: term.name}) }}" rel="category tag">
+                                | {{ term.name }} |
+                        </a>
+                        {% endfor %}
+                    </span>
+
+                            <h2><a href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}">{{ posts.title }}</a></h2>
+
+                        </div>
+
+                        <div class="post-content">
+
+                            <p>{{ posts.content| replace ({'[embed]https://www.youtube.com/watch?v=': '<iframe width="854" height="480" src="https://www.youtube.com/embed/', '[/embed]': '" frameborder="0" allowfullscreen></iframe>'})| raw }}</p>
+
+                        </div>
+
+                        <div class="post-footer">
+
+                            <div class="post-meta">
+
+                                <span class="post-time">{{ posts.date|date('F d, Y') }}</span>
+
+                                <span class="post-author"><span>By</span><a href="{{ path('author_archives', { author_name: posts.author.niceName}) }}"
+                                                                            title="Posts by {{ posts.author.displayName }}"
+                                                                            rel="author">{{ posts.author.displayName }}</a></span>
+
+                            </div>
+
+                            <div class="post-share">
+
+                                <a href="http://www.facebook.com/sharer.php?u=/{{ posts.name }}/&amp;t={{ posts.name }}"
+                                   target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="http://twitter.com/home/?status=/{{ posts.name }}/"
+                                   target="_blank"><i class="fa fa-twitter"></i></a>
+
+
+
+                                <a class="post-comment-link" href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}#comments"><i
+                                            class="fa fa-comment-o"></i><span class="post-comment-number">{{ posts.commentCount }}</span></a>
+
+                            </div>
+
+                        </div>
+
+
+                    </article>
+
+
+                {% include 'newTheme/article/pagination.html.twig' %}
+
+                {% include 'newTheme/article/related-posts.html.twig' %}
+
+                {% include 'newTheme/article/comments.html.twig' %}
+
+
+            </div>
+
+
+            <aside id="sidebar" class="widget-area">
+
+                {% include 'newTheme/sidebar/about-widget.html.twig' %}
+
+                {% include 'newTheme/sidebar/social-widget.html.twig' %}
+
+                {% include 'newTheme/sidebar/sign-up.html.twig' %}
+
+                <div id="treewis_posts_widget-2" class="widget treewis_posts_widget"><h3 class="title-lines"><span>Latest Posts</span>
+                    </h3>
+
+                    <div class="posts-widget">
+                        <ul>
+                            {% for post in allposts|slice(0, 6) %}
+                                <li>
+                                    <div class="posts-widget-item">
+                                        <div class="posts-widget-content">
+                                            <h4 class="with-img"><a href="{{ path('show', {year: post.date|date('Y'), month: post.date|date('m'), day: post.date|date('d'), name: post.name}) }}">{{ post.title }}</a></h4>
+                                            <span>{{ post.date|date('F d, Y')  }}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+
+                {% include 'newTheme/sidebar/facebook-widget.html.twig' %}
+
+                {% include 'newTheme/sidebar/categories-widget.html.twig' %}
+
+            </aside>
+
+
+        </div> <!-- #content -->
+    </div> <!-- .container -->
+
+    {% include 'newTheme/footer/footer.html.twig' %}
+
+{% endblock body %}

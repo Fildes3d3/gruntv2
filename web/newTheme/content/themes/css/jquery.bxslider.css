@@ -1,0 +1,50 @@
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+.post-slider { visibility:hidden; }
+.bx-wrapper { margin:0 auto 60px; padding:0; position:relative; *zoom:1; }
+.bx-wrapper img { display:block; max-width:100%; min-width:100%; }
+
+/** THEME
+===================================*/
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto { bottom:-30px; position:absolute; width:100%; }
+
+/* PAGER */
+.bx-wrapper .bx-pager { color:#a0a0a0; font-family:'Droid Serif', serif; font-size:13px; font-weight:400; text-align:center; padding-top:20px; }
+.bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item { display:inline-block; *display:inline; *zoom:1; }
+.bx-wrapper .bx-pager.bx-default-pager a {  background:#a0a0a0; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; display:block; height:10px; margin:0 5px; text-indent:-9999px; outline:0; -webkit-transition:.25s; -moz-transition:.25s; -ms-transition:.25s; -o-transition:.25s; transition:.25s; width:10px; }
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active { background:#303030; }
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev { background:url(../img/prev.png) no-repeat; left:20px; -webkit-transition:.25s; -moz-transition:.25s; -ms-transition:.25s; -o-transition:.25s; transition:.25s; }
+.bx-wrapper .bx-next { background:url(../img/next.png) no-repeat; right:20px; -webkit-transition:.25s; -moz-transition:.25s; -ms-transition:.25s; -o-transition:.25s; transition:.25s; }
+.bx-wrapper .bx-prev:hover, .bx-wrapper .bx-next:hover { opacity:.8; }
+.bx-wrapper .bx-controls-direction a { height:30px; margin-top:-15px; outline:0; position:absolute; text-indent:-9999px; top:50%; width:30px; z-index:999; }
+.bx-wrapper .bx-controls-direction a.disabled { display:none; }
+
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto { text-align:center; }
+.bx-wrapper .bx-controls-auto .bx-start { background:url(../img/start.png) no-repeat; display:block; height:10px; margin:0 5px; outline:0; text-indent:-9999px; -webkit-transition:.25s; -moz-transition:.25s; -ms-transition:.25s; -o-transition:.25s; transition:.25s; width:10px; }
+.bx-wrapper .bx-controls-auto .bx-start:hover, .bx-wrapper .bx-controls-auto .bx-start.active { background:url(../img/start-hover.png) no-repeat; }
+.bx-wrapper .bx-controls-auto .bx-stop { background:url(../img/stop.png) no-repeat; display:block; height:10px; margin:0 5px; outline:0; text-indent:-9999px; -webkit-transition:.25s; -moz-transition:.25s; -ms-transition:.25s; -o-transition:.25s; transition:.25s; width:9px; }
+.bx-wrapper .bx-controls-auto .bx-stop:hover, .bx-wrapper .bx-controls-auto .bx-stop.active { background:url(../img/stop-hover.png) no-repeat; }
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager { text-align:left; width:80%; }
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto { right:0; width:39px; }
+
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption { background:rgba(0, 0, 0, 0.40); bottom:0; left:0; position:absolute; width:100%; }
+.bx-wrapper .bx-caption span { box-sizing:border-box; color:#ffffff; display:block; font-size:13px; font-style:italic; padding:10px; }

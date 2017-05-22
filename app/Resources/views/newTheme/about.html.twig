@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body class="home blog">
+
+    {% include 'newTheme/header/header.html.twig' %}
+
+<div class="container">
+    <div id="content">
+
+        <div id="main">
+
+            {% for post in posts|slice(0, 4) if post.name == 'about-the-daily-grunt' %}
+
+                <article id="post-69" class="post-69 page type-page status-publish has-post-thumbnail hentry">
+
+                    <div class="post-header">
+
+                        <h1>About Me</h1>
+
+                    </div>
+
+
+                    <div class="post-content">
+
+                        <p>{{ post.content|replace ({'[embed]https://www.youtube.com/watch?v=': '<iframe width="854" height="480" src="https://www.youtube.com/embed/', '[/embed]': '" frameborder="0" allowfullscreen></iframe>'})|raw }}</p>
+
+                    </div>
+
+                    {% include 'newTheme/article/post-footer.html.twig' %}
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% include 'newTheme/sidebar/sidebar.html.twig' %}
+
+
+    </div> <!-- #content -->
+</div> <!-- .container -->
+    {% include ':newTheme/footer:pictures.html.twig' %}
+    {% include 'newTheme/footer/footer.html.twig' %}
+
+{% endblock body %}

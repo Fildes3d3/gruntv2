@@ -1,0 +1,39 @@
+<header id="header">
+
+    <div id="top-bar">
+        <div class="container">
+
+            {% include 'newTheme/header/navbar.html.twig' %}
+
+            <div id="top-social">
+                <a href="https://www.facebook.com/pop.adrian.503" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://plus.google.com/u/0/108399430584931452627" target="_blank"><i class="fa fa-google-plus"></i></a>
+                <a href="https://www.linkedin.com/in/adrian-bogdan-pop/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+            <div id="top-search">
+                <a class="search-icon"><i class="fa fa-search"></i></a>
+                <form role="search" method="get" action="/">
+
+                    <input type="search" class="search-input" placeholder="Type and hit enter..." value="" name="s"/>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="top-logo">
+        <div class="container">
+
+            <div id="logo">
+                <h1>
+                    <a href="{{ path('homepage') }}"><img src="{{ asset("wordpress/wp-content/uploads/2017/05/logo.png") }}" alt="The Daily Grunt"/>
+                    </a>
+                </h1>
+            </div>
+
+        </div>
+    </div>
+
+</header>

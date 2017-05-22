@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body class="{{ post.type }} page-id-{{ post.id }} page-template-default single-author">
+    {% include 'default/head/site-navigation.html.twig' %}
+
+    <div id="container">
+
+        {% include 'default/head/branding.twig' %}
+
+        <div id="content" class="clearfix">
+            <div id="main" class="column clearfix" role="main">
+                <article id="post-{{ post.id }}" class="post-{{ post.id }} {{ post.type }} type-{{ post.type }}
+                    status-{{ post.status }} hentry ">
+
+                    <header class="entry-header">
+                        <h1 class="entry-title">
+                                {{ post.title }}
+                        </h1>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>
+                            {{ post.content|raw }} {# fix text layut problem break after dot#}
+                        </p>
+                        <ul class="ssb_list_wrapper">
+                            <li class="fb2" style="width:135px">
+                                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchasingexcellenceblog.com
+                            %2F2017%2F01%2F23%2Fchasing-excellence-in-2017%2F&amp;layout=button_count&amp;action=like&amp;
+                            show_faces=false&amp;share=true&amp;width=135&amp;height=21&amp;appId=307091639398582"
+                                        scrolling="no" frameborder="0" style="border:none; overflow:hidden;  width:150px; height:21px;"
+                                        allowTransparency="true">
+                                </iframe>
+                            </li>
+                            <li class="twtr" style="width:90px">
+                                <a href="https://twitter.com/share" class="twitter-share-button"
+                                   data-url="#{{ app.request.getUri }}">&nbsp;
+                                </a>
+                                <script>
+                                    !function(d,s,id){
+                                        var js,fjs=d.getElementsByTagName(s)[0],
+                                            p=/^http:/.test(d.location)?'http':'https';
+                                        if(!d.getElementById(id)){
+                                            js=d.createElement(s);
+                                            js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+                                            fjs.parentNode.insertBefore(js,fjs);
+                                        }
+                                    }
+                                    (document, 'script', 'twitter-wjs');
+                                </script>
+                            </li>
+                        </ul>
+                    </div><!-- .entry-content -->
+
+
+                </article><!-- #post-## -->
+
+            </div>
+
+            <div id="sidebar" class="widget-area sidebar-column" role="complementary">
+
+                {% include 'default/sidebar/subscribe.html.twig' %}
+
+                {% include 'default/sidebar/social.html.twig' %}
+
+                {% include 'default/sidebar/categories.html.twig' %}
+
+                {% include 'default/sidebar/recent-posts.html.twig' %}
+
+                {% include 'default/sidebar/archives.html.twig' %}
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% for post in posts|slice(0, 4) if post.name != 'about-the-daily-grunt' %}
+
+    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+
+    {% if 'category' in currentPath %}
+        {% include 'newTheme/article/browsingCat.html.twig' %}
+    {% endif %}
+
+
+    <article id="post-{{ post.id }}"
+         class="post-{{ post.id }} post type-{{ post.type }} status-{{ post.status }} format-standard has-post-thumbnail hentry category-travel tag-alaska tag-forest tag-tithonia tag-travel tag-treewis tag-trip">
+
+    <div class="post-header">
+
+        <span class="post-category">
+        {% for term in terms if post.id == term.id %}
+            <a href="{{ path('category_archives', { category_name: term.name}) }}" rel="category tag">
+                | {{ term.name }} |
+            </a>
+        {% endfor %}
+        </span>
+
+        <h2><a href="{{ path('show', {year: post.date|date('Y'), month: post.date|date('m'), day: post.date|date('d'), name: post.name}) }}">{{ post.title }}</a></h2>
+
+    </div>
+
+    <div class="post-content">
+
+        <p>{{ post.content|replace ({'[embed]https://www.youtube.com/watch?v=': '<iframe width="854" height="480" src="https://www.youtube.com/embed/', '[/embed]': '" frameborder="0" allowfullscreen></iframe>'})|raw }}</p>
+        <p><span class="more-link">
+                <a class="more-button" href="{{ path('show', {year: post.date|date('Y'), month: post.date|date('m'), day: post.date|date('d'), name: post.name}) }}">Continue Reading</a></span>
+        </p>
+
+
+    </div>
+
+    {% include 'newTheme/article/post-footer.html.twig' %}
+
+
+</article>
+{% endfor %}

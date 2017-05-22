@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body class="home blog">
+
+    {% include 'newTheme/header/header.html.twig' %}
+
+<div class="container">
+    <div id="content">
+
+        <div id="main">
+
+            {% include 'newTheme/article/article.html.twig' %}
+
+            {% include 'newTheme/article/pagination.html.twig' %}
+
+
+        </div>
+
+
+        {% include 'newTheme/sidebar/sidebar.html.twig' %}
+
+
+    </div> <!-- #content -->
+</div> <!-- .container -->
+    {% include ':newTheme/footer:pictures.html.twig' %}
+    {% include 'newTheme/footer/footer.html.twig' %}
+
+{% endblock body %}

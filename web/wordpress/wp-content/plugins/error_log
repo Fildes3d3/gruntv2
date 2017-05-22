@@ -1,0 +1,1 @@
+[12-May-2014 05:21:23 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/chasingp/public_html/wp-content/plugins/hello.php on line 60

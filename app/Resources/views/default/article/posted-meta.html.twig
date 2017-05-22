@@ -1,0 +1,11 @@
+<div class="posted-meta">
+    <div class="date-meta">
+        <a href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}" rel="bookmark">{{ posts.date|date("m.d.Y") }}</a>
+    </div>
+    <div class="author-meta">
+        by
+        <a class="url fn n" href="{{ path('author_archives', { author_name: posts.author.niceName}) }}" title="#View all posts by Rick Floyd" rel="author">
+            {{ posts.author.displayName }}</a>
+    </div>
+
+</div><!-- end .posted-meta -->

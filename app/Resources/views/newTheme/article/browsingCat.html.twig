@@ -1,0 +1,8 @@
+<div id="archive-box">
+
+    <span>Browsing Category</span>
+    {% for term in terms if post.id == term.id %}
+    <h1>{{ term.name }}</h1>
+    {% endfor %}
+
+</div>

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<body class="single single-post postid-1034 single-format-standard single-author">
+    {% include 'default/head/site-navigation.html.twig' %}
+
+<div id="container">
+
+    {% include 'default/head/branding.twig' %}
+
+    <div id="content" class="clearfix">
+        <div id="main" class="column clearfix" role="main">
+
+            {% include 'default/article/post.html.twig' %}
+
+
+            {% include 'default/comments/comments.html.twig' %}
+
+        </div>
+
+        <div id="sidebar" class="widget-area sidebar-column" role="complementary">
+
+            {% include 'default/sidebar/subscribe.html.twig' %}
+
+            {% include 'default/sidebar/social.html.twig' %}
+
+            {% include 'default/sidebar/categories.html.twig' %}
+
+            <aside id="recent-posts-2" class="widget widget_recent_entries">
+                <h2 class="widget-title">Recent Posts</h2>
+                <ul>
+                    {% for allposts in allposts|slice(0, 5) %}
+                        <li>
+                            <a href="/{{ allposts.date|date('Y') }}/{{ allposts.date|date('m') }}/{{ allposts.date|date('d') }}
+                            /{{ allposts.name }}/">{{ allposts.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </aside>
+
+            {% include 'default/sidebar/archives.html.twig' %}
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+

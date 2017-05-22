@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+img{border:0px;}
+a{text-decoration:none;}
+div.wrap{
+	width:800px;
+}
+body{background-color: #99FFFF;
+    background-image: url("/wp-content/themes/chrischild/assets/css/images/bg.png");
+    background-repeat: repeat-x;
+    color: #555555;
+}
+.mainbg{
+	width:	660px;
+	text-align:left;
+    padding-left:20px;
+    padding-right:20px; 
+    padding-top:20px;
+    padding-bottom:20px;
+}
+div.postboxinternal{
+ 	background-color:#ffffff;
+    border-color: #b4b3b3;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0px 0px 5px #b4b3b3;
+    line-height: 1;
+    margin-top: 7px;
+    padding: 3px;
+ }
+ 

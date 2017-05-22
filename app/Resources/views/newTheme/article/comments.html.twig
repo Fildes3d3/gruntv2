@@ -1,0 +1,145 @@
+<div id="comments">
+
+    <h3 class="title-lines"><span>{{ posts.commentCount }} Comments</span></h3>
+
+
+    <ul class="comments-list">
+    {% for comment in comments if comment.parent == 0 %}
+        <li id="comment-{{ comment.id }}" class="comment byuser comment-author-{{ comment.author }} bypostauthor even thread-even depth-1">
+
+            <div class="com-comment">
+
+                <div class="com-comment-author-img">
+                    <img alt="" src="http://0.gravatar.com/avatar/ca88cf00677e25b81037afa3241ba2c1?s=60&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/589da7439524a74e99bcbef689db4ed0?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">            </div>
+
+                <div class="com-comment-content">
+
+                <span class="com-comment-edit-reply">
+                    <a rel="nofollow" class="comment-reply-link" href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}?replytocom={{ comment.id }}#respond"
+                       onclick="return addComment.moveForm( 'comment-{{ comment.id }}','{{ comment.id }}', 'respond', '{{ posts.id }}')" aria-label="Reply to {{ comment.author }}">Reply
+                    </a>
+                </span>
+
+                    <span class="com-comment-author">{{ comment.author }}</span>
+
+                    <span class="com-comment-date">{{ comment.date|date('F d, Y') }} at {{ comment.date|date('h:i a') }}</span>
+
+                    {% if comment.approved != 1 %}
+                        <p class="com-comment-awamod">Your comment is awaiting moderation.</p>
+                    {% endif %}
+
+                    <p>{{ comment.content|raw }}</p>
+
+                </div>
+
+            </div>
+
+        </li>
+
+        <ul class="children">
+
+            {% for commentresponse in comments if commentresponse.parent == comment.id %}
+
+            <li id="comment-{{ commentresponse.id }}" class="comment byuser comment-author-{{ commentresponse.author }} bypostauthor even thread-even depth-2">
+
+                <div class="com-comment">
+
+                    <div class="com-comment-author-img">
+                        <img alt="" src="http://0.gravatar.com/avatar/ca88cf00677e25b81037afa3241ba2c1?s=60&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/589da7439524a74e99bcbef689db4ed0?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60"></div>
+
+                    <div class="com-comment-content">
+
+                <span class="com-comment-edit-reply">
+                    <a rel="nofollow" class="comment-reply-link" href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}?replytocom={{ commentresponse.id }}#respond"
+                       onclick="return addComment.moveForm( 'comment-{{ commentresponse.id }}','{{ commentresponse.id }}', 'respond', '{{ posts.id }}')" aria-label="Reply to {{ commentresponse.author }}">Reply
+                    </a>
+                </span>
+
+                        <span class="com-comment-author">{{ commentresponse.author }}</span>
+
+                        <span class="com-comment-date">{{ commentresponse.date|date('F d, Y') }} at {{ commentresponse.date|date('h:i a') }}</span>
+
+                        {% if commentresponse.approved != 1 %}
+                        <p class="com-comment-awamod">Your comment is awaiting moderation.</p>
+                        {% endif %}
+
+                        <p>{{ commentresponse.content|raw }}</p>
+
+                    </div>
+
+                </div>
+
+            </li>
+                <ul class="children">
+
+                    {% for commentresponse2 in comments if commentresponse2.parent == commentresponse.id %}
+
+                        <li id="comment-{{ commentresponse2.id }}" class="comment byuser comment-author-{{ commentresponse2.author }} bypostauthor even thread-even depth-3">
+
+                            <div class="com-comment">
+
+                                <div class="com-comment-author-img">
+                                    <img alt="" src="http://0.gravatar.com/avatar/ca88cf00677e25b81037afa3241ba2c1?s=60&amp;d=mm&amp;r=g" srcset="http://2.gravatar.com/avatar/589da7439524a74e99bcbef689db4ed0?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60"></div>
+
+                                <div class="com-comment-content">
+
+                {#<span class="com-comment-edit-reply">
+                    <a rel="nofollow" class="comment-reply-link" href="{{ path('show', {year: posts.date|date('Y'), month: posts.date|date('m'), day: posts.date|date('d'), name: posts.name}) }}?replytocom={{ commentresponse2.id }}#respond"
+                       onclick="return addComment.moveForm( 'comment-{{ commentresponse2.id }}','{{ commentresponse2.id }}', 'respond', '{{ posts.id }}')" aria-label="Reply to {{ commentresponse2.author }}">Reply
+                    </a>
+                </span>#}
+
+                                    <span class="com-comment-author">{{ commentresponse2.author }}</span>
+
+                                    <span class="com-comment-date">{{ commentresponse2.date|date('F d, Y') }} at {{ commentresponse2.date|date('h:i a') }}</span>
+
+                                    {% if commentresponse2.approved != 1 %}
+                                        <p class="com-comment-awamod">Your comment is awaiting moderation.</p>
+                                    {% endif %}
+
+                                    <p>{{ commentresponse2.content|raw }}</p>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+                    {% endfor %}
+
+                    <!-- #comment-## -->
+                </ul><!-- .children -->
+            {% endfor %}
+
+            <!-- #comment-## -->
+        </ul><!-- .children -->
+
+        <!-- #comment-## -->
+
+    {% endfor %}
+    </ul>
+
+
+    <div id="respond" class="comment-respond">
+        <h3 id="reply-title" class="comment-reply-title">Leave a Reply
+            <small><a rel="nofollow" id="cancel-comment-reply-link" href="/{{ posts.date|date('Y') }}/{{ posts.date|date('m') }}/{{ posts.date|date('d') }}/{{ posts.name }}/#respond"
+                      style="display:none;">Cancel Reply</a></small>
+        </h3>
+        <form action="/wordpress/wp-comments-post.php" method="post" id="commentform"
+              class="comment-form" novalidate="">
+            <p class="comment-form-comment"><textarea id="comment" name="comment" rows="5"
+                                                      required="required"></textarea></p>
+            <p class="comment-form-author"><label for="author">Name<span class="required">*</span></label><input
+                        id="author" name="author" type="text" value="{{ comment_author }}" required="required"></p>
+            <p class="comment-form-email"><label for="email">Email<span class="required">*</span></label><input
+                        id="email" name="email" type="text" value="{{ comment_author_email }}" required="required"></p>
+            <p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="{{ comment_author_url }}">
+            </p>
+            <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+                <input hidden name="comment_post_ID" value="{{ posts.id }}" id="comment_post_ID">
+                <input hidden name="comment_parent" id="comment_parent" value="#">
+                <input hidden name="redirect_to" value="{{ app.request.uri }}">
+            </p>
+        </form>
+    </div><!-- #respond -->
+
+</div>
